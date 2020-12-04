@@ -1,0 +1,69 @@
+---
+title: "Package_DS"
+output: html_document
+---
+
+```{r}
+library(devtools)
+library(roxygen2)
+```
+
+
+```{r}
+create_package("C:/Users/198313/Desktop/PackageDS", open = FALSE)
+setwd("C:/Users/198313/Desktop/PackageDS")
+
+
+
+(city <- factor(c("Berlin", "Munich", "Erfurt", "Postdam")))
+(thing <- factor(c("Alexa", "Fest", "Wurst", "Museum")))
+c(city, thing)
+
+factor(c(as.character(city), as.character(thing)))
+
+Germ <- function(city, thing) {
+   factor(c(as.character(city), as.character(thing)))
+}
+
+
+use_r("Germ")
+```
+
+
+
+
+```{r}
+#' Bind two factors
+#'
+#' Create a new factor from two existing factors, where the new factor's levels
+#' are the union of the levels of the input factors.
+#'
+#' @param city factor
+#' @param thing factor
+#'
+#' @return factor
+#' @export
+#' @examples
+#' Germ(kin$pop[c(51, 51, 121)], job$av.g[c(51, 81, 23)])
+```
+
+
+```{r document-Desalegn, eval = FALSE}
+#creating documentation for moto
+document()
+```
+
+
+
+```{r eval = FALSE}
+setwd("..")
+install("PackageDS")
+```
+
+```{r eval = FALSE}
+library(PackageDS)
+setwd("PackageDS")
+check()
+
+use_mit_license("Kindye Atnafu Adugna")
+```
